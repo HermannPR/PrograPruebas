@@ -1,29 +1,24 @@
 #pragma once
 #include <string>
-#include <iostream>
 
-// Se crea una clase Nodo
 class Node {
-    public:
-    // Lectura de archivo
-    std::string ip; 
-    int key; // Numero de ips destino
-    Node* left; //Nodo hijo izquierdo
-    Node* right; //nodo hijo derecho
+public:
+    std::string ip; // Dirección IP
+    int key;        // Número de accesos asociados a esta IP
+    Node* left;     // Nodo hijo izquierdo
+    Node* right;    // Nodo hijo derecho
 
-    Node(std::string, int); //Constructor
-    Node(); //Constructor por default
+    Node(std::string, int); // Constructor parametrizado
+    Node();                 // Constructor por defecto
 };
 
-// Constructor
 Node::Node(std::string _ip, int _key) { 
-    ip = _ip; // Stores ip address
+    ip = _ip; 
     key = _key;
-    left = nullptr; 
+    left = nullptr;
     right = nullptr;
 }
 
-// Constructor por default
 Node::Node() {
     ip = "0.0.0.0";
     key = 0;
